@@ -1,0 +1,18 @@
+---
+process_name: vision
+log_severity: DEBUG
+log_filename: "/dev/stdout"
+vision_host: 0.0.0.0:9000
+eventstore_config:
+  dynamo_endpoint: http://172.30.1.5:8000
+  kafka_config:
+    hosts: 172.30.1.4:9092
+    count_producers: '2'
+    count_retries: '2'
+    count_partitions: '3'
+    acks: all
+    partitioner_strategy: key-hashing-partitioner
+    topics:
+    - LegEvents
+    - InternalLegEvent
+    - InternalBridgeEvent

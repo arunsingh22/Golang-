@@ -1,0 +1,19 @@
+version : '3.7'
+
+services:
+   web:
+      image: nginx
+      ports:
+      - 9090:9090
+      - 8000:8000
+
+   databases:
+       image: redis
+
+
+
+# .yml or yaml 
+# json vs yml 
+
+
+
